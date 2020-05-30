@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Navbar from "./Component/Layout/Navbar";
+import "./App.css";
+import { Router } from "@reach/router";
+import Home from "./Component/Pages/Home";
+import WebDev from "./Component/Pages/WebDev";
+import MobileDev from "./Component/Pages/MobileDev";
+import DataScience from "./Component/Pages/DataScience";
+import Pricing from "./Component/Pages/Pricing";
+import GetStarted from "./Component/Pages/GetStarted";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <Router>
+        <Home path="/" />
+        <WebDev path="/webdev" />
+        <MobileDev path="/mobiledev" />
+        <DataScience path="/datascience" />
+        <Pricing path="/pricing" />
+        <GetStarted path="/getstarted" />
+      </Router>
     </div>
   );
 }
